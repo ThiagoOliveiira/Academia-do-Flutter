@@ -1,2 +1,2 @@
-export './login/login_page.dart';
+export './login/login.dart';
 export './register/register_page.dart';

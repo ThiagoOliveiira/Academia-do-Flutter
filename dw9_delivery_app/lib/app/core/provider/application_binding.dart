@@ -1,7 +1,6 @@
+import 'package:dw9_delivery_app/app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../core.dart';
 
 class ApplicationBinding extends StatelessWidget {
   final Widget child;
@@ -12,6 +11,7 @@ class ApplicationBinding extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider(create: (context) => CustomDio()),
+        Provider<AuthRepository>(create: (context) => AuthRepositoryImpl(dio: context.read())),
       ],
       child: child,
     );
